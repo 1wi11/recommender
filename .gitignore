@@ -1,0 +1,46 @@
+# Mac stuff
+.DS_Store
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+#Ipython Notebook
+.ipynb_checkpoints
+
+.idea/
+
+# data related files
+recommender/preprocess/movielens/.movielens
+recommender/preprocess/avazu_ctr/.avazu_ctr
+recommender/preprocess/sample/.sample
+
+recommender/load_data/movielens/.movielens
+
+# venv
+.venv/
+venv/
+
+# log
+recommender/*.log
+recommender/*.pt
+recommender/*.pkl
+tests/*.log
+tests/*.pt
+tests/*.pkl
+*.log
+*.pt
+*.pkl
+outputs
+
+# result files including log, pt, plot image
+result/
+tests/module/result
+
+# code cov
+.coverage
+
+# data
+.data/
+recommender/.data
