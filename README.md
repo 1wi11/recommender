@@ -27,3 +27,79 @@
 - scripts : 실행 스크립트
 - tests : 테스트
 - repo : 리포지토리 설정(ruff, gitignore 등)
+
+```
+recommender/
+├── .data/
+│   ├── movielens/
+│   │   ├── ml-1m/
+│   │   │   ├── raw/                # original dataset files (immutable)
+│   │   │   │   ├── ratings.dat
+│   │   │   │   ├── movies.dat
+│   │   │   │   └── users.dat
+│   │   │   ├── processed/          # cleaned interactions (to be generated)
+│   │   │   ├── splits/             # train/val/test splits
+│   │   │   └── artifacts/          # models, metrics, logs
+│   │   └── ml-10m/                 # (future) same structure as ml-1m
+│   └── pinterest/
+│       └── default/
+│           ├── raw/
+│           ├── processed/
+│           ├── splits/
+│           └── artifacts/
+│
+├── recommender/                    # Core library (reusable logic)
+│   ├── __init__.py
+│   │
+│   ├── conf/                       # Hydra configuration
+│   │   ├── config.yaml             # entry point (defaults)
+│   │   ├── dataset/
+│   │   │   ├── movielens.yaml
+│   │   │   └── pinterest.yaml
+│   │   ├── paths/
+│   │   │   └── local.yaml
+│   │   └── preprocess/
+│   │       └── implicit.yaml
+│   │
+│   ├── pipelines/                  # Orchestration logic
+│   │
+│   │
+│   │
+│   │
+│   ├── data/                       # Data utilities
+│   │
+│   │
+│   │
+│   │
+│   │
+│   ├── models/                     # Recommendation models
+│   │
+│   │
+│   │
+│   │
+│   ├── metrics/                    # Evaluation metrics
+│   │
+│   │
+│   └── utils/                      # Shared utilities
+│
+│
+│
+│
+├── scripts/                        # Thin CLI entrypoints
+│   ├── prepare_dataset.py          # hydra → pipelines.prepare
+│   ├── train.py                    # hydra → pipelines.train
+│   ├── evaluate.py                 # hydra → pipelines.evaluate
+│   └── download/
+│       ├── movielens.py
+│       └── pinterest.py
+│
+├── tests/
+│
+│
+│
+│
+├── requirements.txt
+├── README.md
+├── .gitignore
+└── ruff.toml
+```
